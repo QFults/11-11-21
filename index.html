@@ -43,6 +43,7 @@
       userElem.innerHTML = `
         <h3>${users[i].username}</h3>
         <h4>${users[i].password}</h4>
+        <button class="delete">delete</button>
         <hr>
       `
       document.getElementById('users').append(userElem)
@@ -58,6 +59,7 @@
       userElem.innerHTML = `
         <h3>${document.getElementById('username').value}</h3>
         <h4>${document.getElementById('password').value}</h4>
+        <button class="delete">delete</button>
         <hr>
       `
       document.getElementById('users').append(userElem)
@@ -69,6 +71,12 @@
       //   <h1>${document.getElementById('username').value}</h1>
       //   <h2>${document.getElementById('password').value}</h2>
       // `
+    })
+
+    document.addEventListener('click', event => {
+      if (event.target.className === 'delete') {
+        event.target.parentNode.remove()
+      }
     })
 
   </script>
